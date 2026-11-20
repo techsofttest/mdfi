@@ -3,24 +3,123 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --muted: #686868;
+  --red: #e21d2b;
+  --red-dark: #bd1421;
+  --red-soft: #fff0f1;
+  --surface: #f6f5f2;
+  --surface-dark: #171717;
+  --line: #e9e7e4;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-muted: var(--muted);
+  --color-red: var(--red);
+  --color-red-dark: var(--red-dark);
+  --color-red-soft: var(--red-soft);
+  --color-surface: var(--surface);
+  --color-surface-dark: var(--surface-dark);
+  --color-line: var(--line);
+  --font-sans: var(--font-manrope);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-manrope), sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--red);
+  color: white;
+}
+
+button,
+a,
+[role="button"],
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container-shell {
+  width: 100%;
+  max-width: 96rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+.display-heading {
+  letter-spacing: -0.065em;
+  line-height: 0.94;
+}
+
+.section-heading {
+  letter-spacing: -0.055em;
+  line-height: 1.02;
+}
+
+.body-copy {
+  line-height: 1.8;
+}
+
+.red-gradient {
+  background:
+    radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.2), transparent 30%),
+    linear-gradient(125deg, #ed2936, #c91625);
+}
+
+@media (min-width: 64rem) {
+  .container-shell {
+    padding-inline: 3rem;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes slashIn {
+  from {
+    opacity: 0;
+    transform: scaleX(0) translateX(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1) translateX(0);
+  }
+}
+
+.animate-slash-in {
+  animation: slashIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) 450ms both;
 }
