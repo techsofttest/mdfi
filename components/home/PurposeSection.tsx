@@ -80,9 +80,9 @@ export function PurposeSection({ cards = defaultCards }: PurposeSectionProps) {
         {/* Dynamic 2x2 Grid of Cards */}
         <div className="mt-14 grid gap-6 sm:grid-cols-2">
           {cards.map((card, idx) => (
-            <Reveal key={card.id} delayMs={idx * 120} direction="up">
+            <Reveal key={card.id} delayMs={idx * 120} direction="up" className="h-full">
               <div
-                className="group relative min-h-[18rem] sm:min-h-[20rem] overflow-hidden rounded-xl bg-neutral-900 p-8 text-white shadow-md transition-all duration-300 hover:shadow-xl"
+                className="group relative flex min-h-[20rem] sm:min-h-[22rem] lg:min-h-[24rem] h-full flex-col justify-end overflow-hidden rounded-xl bg-neutral-900 p-8 text-white shadow-md transition-all duration-300 hover:shadow-xl"
               >
                 {/* Card Background Image: Grayscale by default, color on hover */}
                 <Image
@@ -93,11 +93,11 @@ export function PurposeSection({ cards = defaultCards }: PurposeSectionProps) {
                   className="object-cover grayscale transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-105"
                 />
 
-                {/* Dark Gradient Overlay for optimal text readability */}
-                <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-black/20 transition-opacity duration-300 group-hover:opacity-85" />
+                {/* Dark Gradient Overlay for optimal text readability from the bottom */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent transition-opacity duration-300 group-hover:opacity-90" />
 
-                {/* Card Content: Title and Description only */}
-                <div className="relative z-10 flex h-full flex-col justify-end">
+                {/* Card Content: Fixed to the bottom */}
+                <div className="relative z-10 mt-auto w-full">
                   <h3 className="text-2xl font-bold tracking-tight text-white uppercase sm:text-3xl">
                     {card.title}
                   </h3>
