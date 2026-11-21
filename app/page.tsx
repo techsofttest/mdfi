@@ -2,6 +2,7 @@ import { Navbar } from "@/components/global/Navbar";
 import { Footer } from "@/components/global/Footer";
 import { HeroSection } from "@/components/home/HeroSection";
 import { WhatWeDoSection } from "@/components/home/WhatWeDoSection";
+import { ServicesSection } from "@/components/home/ServicesSection";
 import { PurposeSection } from "@/components/home/PurposeSection";
 import { ImpactSection } from "@/components/home/ImpactSection";
 import { CompaniesSection } from "@/components/home/CompaniesSection";
@@ -15,6 +16,7 @@ export default function Home() {
       <Navbar navigation={navigationData} />
       <HeroSection />
       <WhatWeDoSection cards={whatWeDoCardsData} />
+      <ServicesSection />
       <PurposeSection cards={purposeCardsData} />
       <ImpactSection />
       <CompaniesSection />

@@ -6,7 +6,15 @@ import { GalleryItem } from "@/components/home/GallerySection";
 export const navigationData: NavigationItem[] = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "#why" },
-  { label: "Products and Services", href: "#work" },
+  {
+    label: "Products and Services",
+    href: "#services",
+    children: [
+      { label: "Microfinance Loan", href: "#microfinance-loan" },
+      { label: "Business / MSME Loan", href: "#msme-loan" },
+      { label: "JLG / Ladies Group Loan", href: "#jlg-loan" },
+    ],
+  },
   { label: "Gallery", href: "#gallery" },
   { label: "Group of Company", href: "#companies" },
   { label: "Contact Us", href: "#footer-speak-to-team" },

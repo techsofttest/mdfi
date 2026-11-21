@@ -84,7 +84,7 @@ export function WhatWeDoSection({ cards }: WhatWeDoSectionProps) {
       </div>
 
       {/* View All Services Primary Button with scroll interaction */}
-      <Reveal delayMs={200} direction="up">
+      {/* <Reveal delayMs={200} direction="up">
         <div className="mt-14 flex items-center justify-center">
           <Button
             href="#connect"
@@ -96,7 +96,7 @@ export function WhatWeDoSection({ cards }: WhatWeDoSectionProps) {
             <ArrowUpRight size={16} />
           </Button>
         </div>
-      </Reveal>
+      </Reveal> */}
     </section>
   );
 }
